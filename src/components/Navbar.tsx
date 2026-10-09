@@ -45,9 +45,9 @@ export function Navbar() {
           {/* Brand Logo & Name */}
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
             <img
-              src="/logo.png"
+              src="/logo-clean.png"
               alt="TheBizz360 Logo"
-              className="h-9 w-9 sm:h-10 sm:w-10 rounded-xl object-contain shadow-xs border border-[#f6ddc5] transition-transform duration-200 group-hover:scale-105 shrink-0"
+              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
             />
             <div className="flex flex-col">
               <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-[#10161a] leading-none">

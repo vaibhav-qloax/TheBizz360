@@ -14,7 +14,7 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="TheBizz360"
-                className="h-10 w-10 rounded-xl object-contain bg-white p-1"
+                className="h-10 w-10 rounded-xl object-contain"
               />
               <span className="font-display font-bold text-xl text-white">
                 TheBizz<span className="text-[#ff7a1a]">360</span>
