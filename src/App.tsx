@@ -17,21 +17,30 @@ function ScrollToTop() {
   return null;
 }
 
+function MainContent() {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+
+  return (
+    <main className={`flex-1 ${isHome ? '' : 'pt-16 sm:pt-18'}`}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/blogs/:slug" element={<BlogDetailPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </main>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col font-body bg-[#fff5ec] text-[#10161a]">
         <Navbar />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/blogs" element={<BlogsPage />} />
-            <Route path="/blogs/:slug" element={<BlogDetailPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<HomePage />} />
-          </Routes>
-        </main>
+        <MainContent />
         <Footer />
       </div>
     </BrowserRouter>

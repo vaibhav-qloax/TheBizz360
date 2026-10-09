@@ -107,7 +107,7 @@ export function HomePage() {
       />
 
       {/* 1. HERO SECTION: Explain TheBizz360 & Prominent Link to www.thebizz360.com */}
-      <section className="relative overflow-hidden pt-10 pb-16 md:pt-18 md:pb-24 border-b border-[#f6ddc5]/60 bg-[#fff5ec]">
+      <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 md:pt-36 md:pb-24 border-b border-[#f6ddc5]/60 bg-[#fff5ec] min-h-[85vh] flex items-center">
         {/* Softly Faded Food Background (Tinted to match site's warm palette) */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
@@ -119,18 +119,10 @@ export function HomePage() {
           <div className="absolute inset-0 bg-linear-to-b from-[#fff5ec]/50 via-transparent to-[#fff5ec]" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-4 sm:py-6">
           {/* Direct Text on Background (No box container) */}
-          <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6 mb-12 sm:mb-16">
-            {/* User-Friendly Header Badge */}
-            <div className="flex items-center justify-center">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-xs border border-[#f6ddc5] text-xs font-semibold text-[#10161a] shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-[#d9480f]" />
-                <span className="text-[#10161a]">Unified Campus &amp; Complex Platform</span>
-                <span className="text-gray-300">|</span>
-                <span className="text-[#d9480f] font-bold">Food &bull; Services &bull; Work</span>
-              </div>
-            </div>
+          <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
+
 
             {/* Primary H1 */}
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-black text-[#10161a] tracking-tight leading-[1.18] sm:leading-[1.14]">
@@ -177,11 +169,6 @@ export function HomePage() {
                 <ChevronRight className="w-3.5 h-3.5" />
               </Link>
             </div>
-          </div>
-
-          {/* Clean Platform Preview (Visual Introduction to Food & Work) */}
-          <div className="pt-2">
-            <PlatformPreview />
           </div>
         </div>
       </section>
@@ -244,6 +231,25 @@ export function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 3. INTERACTIVE PLATFORM PREVIEW */}
+      <section className="py-12 sm:py-16 bg-[#fffaf4] border-b border-[#f6ddc5]/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#d9480f] block mb-1">
+              Live Platform Experience
+            </span>
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-[#10161a] tracking-tight">
+              See How It Works in Practice
+            </h2>
+            <p className="mt-2 text-xs sm:text-sm text-[#7a6a5c]">
+              Toggle between Food Space and Work Space to preview combined orders and streamlined commercial services.
+            </p>
+          </div>
+
+          <PlatformPreview />
         </div>
       </section>
 
