@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Pizza Corner logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ed7e41"/>
+      <stop offset="1" stop-color="#cc4e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="60" fill="url(#g)"/>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="4"/>
+  <g>
+    <path d="M128 208L62 94a112 112 0 0 1 132 0z" fill="#ffd43b"/>
+    <path d="M52 92q76-40 152 0" stroke="#ffffff" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="112" cy="116" r="13" fill="#e03131"/>
+    <circle cx="148" cy="130" r="12" fill="#e03131"/>
+    <circle cx="126" cy="162" r="11" fill="#e03131"/>
+  </g>
+</svg>

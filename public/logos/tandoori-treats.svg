@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Tandoori Treats logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ec9538"/>
+      <stop offset="1" stop-color="#ca6900"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="60" fill="url(#g)"/>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="4"/>
+  <g>
+    <path d="M128 48c6 36 50 54 50 102 0 30-22 52-50 52s-50-22-50-52c0-24 12-36 24-50 2 14 8 22 18 26-8-30-4-54 8-78z" fill="#ffffff"/>
+    <path d="M128 132c4 18 24 26 24 48 0 14-10 24-24 24s-24-10-24-24c0-12 6-18 12-24 2 8 6 12 10 12-4-14-2-26 2-36z" fill="#ffd43b"/>
+  </g>
+</svg>

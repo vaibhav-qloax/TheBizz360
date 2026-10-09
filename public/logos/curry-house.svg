@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Curry House logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d55959"/>
+      <stop offset="1" stop-color="#b12525"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="60" fill="url(#g)"/>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="4"/>
+  <g>
+    <path d="M60 116h136l-10-22a12 12 0 0 0-11-7H81a12 12 0 0 0-11 7z" fill="#ffffff"/>
+    <circle cx="128" cy="80" r="10" fill="#ffffff"/>
+    <path d="M68 124h120v40c0 28-22 48-50 48h-20c-28 0-50-20-50-48z" fill="#ffffff"/>
+    <path d="M56 140h-16m176 0h16" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M100 172h56" stroke="rgba(0,0,0,.14)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M110 66c-8-10 8-16 0-26m20 26c-8-10 8-16 0-26" stroke="#ffd43b" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Juice Bar logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f36868"/>
+      <stop offset="1" stop-color="#d33737"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="60" fill="url(#g)"/>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="4"/>
+  <g>
+    <path d="M82 82h92l-11 110a14 14 0 0 1-14 12H107a14 14 0 0 1-14-12z" fill="#ffffff"/>
+    <path d="M90 124h76l-6 62a9 9 0 0 1-9 8h-46a9 9 0 0 1-9-8z" fill="#ffa94d"/>
+    <path d="M140 52l16 66" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="176" cy="84" r="24" fill="#ffd43b"/>
+    <circle cx="176" cy="84" r="14" fill="none" stroke="#fff3bf" stroke-width="4"/>
+  </g>
+</svg>

@@ -1,0 +1,107 @@
+import { BlogPost } from '../types';
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'future-of-campus-dining-automation',
+    title: 'How Digital Pre-Ordering Eliminates Lunch Rush Bottlenecks in Commercial & Campus Complexes',
+    excerpt: 'Examining how real-time order scheduling, multi-shop delivery, and contactless token dispatch solve peak lunch bottlenecks for high-volume food courts.',
+    category: 'Dining Logistics',
+    author: {
+      name: 'Operations & Logistics Team',
+      role: 'Complex Systems Research',
+    },
+    publishedAt: 'October 4, 2026',
+    readTime: '4 min read',
+    isFeatured: true,
+    coverImage: '/dishes/thali.png',
+    tags: ['Dining Automation', 'Queue Systems', 'Desk Delivery', 'Food Tech'],
+    keyTakeaways: [
+      'Peak counter wait times drop significantly when tenants can schedule orders 15 minutes before breaks.',
+      'Kitchen order display tickets allow food stall vendors to batch preparation for high-demand items like dosas and thalis.',
+      'Push alerts and 4-digit handover codes streamline office desk delivery and eliminate crowded counter queues.',
+    ],
+    content: [
+      'Commercial office complexes and high-density campuses face one of the most intense cyclical demand curves in the food service industry. Unlike high-street restaurants with rolling walk-in patrons, campus food courts experience razor-sharp demand spikes aligned strictly with scheduled lunch intervals.',
+      'When hundreds of employees and students descend upon counters simultaneously, kitchen staff become overwhelmed taking orders, managing separate cash counters, and shouting out order numbers over ambient noise. The result is delayed service, error-prone fulfillment, and frustrated customers.',
+      'TheBizz360 tackles this bottleneck at the source by distributing order entry across personal mobile screens. By enabling pre-ordering and showing live preparation stages, patrons step up to the pickup counter only when their specific order token transitions to "Ready for Pickup".',
+      'Furthermore, by aggregating items from multiple food court stalls into a single unified office delivery, employees receive complete meals at their desk without navigating crowded elevators and queues.',
+    ],
+  },
+  {
+    slug: 'in-building-services-directory-networking',
+    title: 'In-Building Services: How Digital Directories Connect Office Tenants to Verified Local Vendors',
+    excerpt: 'Why modern commercial complexes and business towers are replacing static lobby noticeboards with interactive, searchable service directories.',
+    category: 'Commercial Services',
+    author: {
+      name: 'TheBizz360 Editorial Team',
+      role: 'Work Space Strategy',
+    },
+    publishedAt: 'September 28, 2026',
+    readTime: '5 min read',
+    isFeatured: false,
+    coverImage: '/dishes/breakfast.png',
+    tags: ['Business Directory', 'Commercial Services', 'IT Support', 'Complex Operations'],
+    keyTakeaways: [
+      'Digital directories organized by building, wing, and floor make finding proximate service providers instantaneous.',
+      'Tenants gain quick access to verified in-house businesses for CA, legal, IT, and maintenance needs.',
+      'Structured enquiry workflows replace informal messaging and ensure clear scopes of work.',
+    ],
+    content: [
+      'Commercial office complexes house an extraordinary concentration of specialized enterprises: software development firms, chartered accountants, legal advocates, design studios, and logistics couriers. Yet, tenants on one floor rarely know what services exist two floors above.',
+      'Historically, building occupants relied on paper noticeboards in reception lobbies, word-of-mouth recommendations, or generic search engines that fail to identify providers operating inside the same complex.',
+      'The Work Space inside TheBizz360 introduces a structured local marketplace where tenants discover verified businesses by discipline—whether they need immediate IT assistance, legal document vetting, or quarterly tax filings.',
+      'Because all providers operate within the physical complex, inquiries result in immediate face-to-face consultations, established trust, and rapid turnaround times.',
+    ],
+  },
+  {
+    slug: 'smart-document-printing-office-parks',
+    title: 'Paperwork Without the Wait: Why Modern Office Parks Are Digitizing Print & Xerox Orders',
+    excerpt: 'How cloud document submission, preset print specifications, and ready tokens eliminate flash drive security risks and long counter lines.',
+    category: 'Work & Productivity',
+    author: {
+      name: 'Workflow Productivity Group',
+      role: 'Operations Research',
+    },
+    publishedAt: 'September 19, 2026',
+    readTime: '3 min read',
+    isFeatured: false,
+    coverImage: '/dishes/lunch.png',
+    tags: ['Print & Xerox', 'Productivity', 'Office Operations', 'Zero Queue'],
+    keyTakeaways: [
+      'Eliminates flash drive malware hazards through direct, authenticated PDF upload queues.',
+      'Print vendors can batch jobs by paper weight, color mode, and binding requirements in advance.',
+      'Tenants save valuable hours by receiving an alert when documents are printed and bound for pickup.',
+    ],
+    content: [
+      'The morning of critical board presentations, legal filings, or project deadlines is universally tense: long lines wrapping around the on-site print shop, frantic professionals plugging USB flash drives into shared shop terminals, and formatting discrepancies under pressure.',
+      'This manual workflow is slow and poses cybersecurity risks via infected thumb drives, along with frequent misprints due to incompatible software configurations.',
+      'Under TheBizz360 Work Space, the Print & Xerox capability digitizes the entire submission process. Users upload PDFs, select exact specifications (single-sided vs duplex, color vs monochrome, staple vs spiral binding), and track print progress directly from their desk.',
+      'The print operator processes jobs methodically, prints directly with zero manual drive handling, and issues a ready token for immediate desk pickup or delivery.',
+    ],
+  },
+  {
+    slug: 'how-commercial-hubs-empower-local-campus-vendors',
+    title: 'Empowering Independent Outlets: The Digital Cockpit for Food Court & Commercial Stalls',
+    excerpt: 'How unified platforms give small food stalls and service counters an enterprise-grade order management cockpit without prohibitive software costs.',
+    category: 'Merchant Operations',
+    author: {
+      name: 'Small Business Research',
+      role: 'Merchant Solutions',
+    },
+    publishedAt: 'September 12, 2026',
+    readTime: '4 min read',
+    isFeatured: false,
+    coverImage: '/dishes/biryani.png',
+    tags: ['Merchant Success', 'Small Business', 'Food Stalls', 'Commercial Operations'],
+    keyTakeaways: [
+      'Provides independent vendors with live menu controls, order display queues, and handover verification.',
+      'Outlets gain visibility into peak demand hours and top-selling items to plan prep efficiently.',
+      'Low entry barriers enable non-technical operators to participate fully in modern digital commerce.',
+    ],
+    content: [
+      'Commercial building dining hubs and retail plazas are powered by independent entrepreneurs: juice bars, family-run thali stalls, bakeries, and device repair desks. Unlike national chains, these operators rarely possess the resources to deploy custom apps or pay hefty third-party aggregator commissions.',
+      'TheBizz360 provides small operators with an out-of-the-box digital management cockpit. They can toggle sold-out dishes with one tap, view incoming order queues organized by preparation time, and verify handover codes upon customer pickup or delivery handover.',
+      'By keeping operational complexity low and interfaces intuitive, local food stalls and commercial counters thrive alongside the digital expectations of modern office workers.',
+    ],
+  },
+];

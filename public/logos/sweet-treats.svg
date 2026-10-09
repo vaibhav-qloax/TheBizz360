@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Sweet Treats logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c068d5"/>
+      <stop offset="1" stop-color="#9937b1"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="60" fill="url(#g)"/>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="4"/>
+  <g>
+    <path d="M80 150h96l-14 54H94z" fill="#ffffff"/>
+    <path d="M100 160l8 40m20-40v40m20-40l-8 40" stroke="rgba(0,0,0,.14)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M70 152a58 24 0 0 1 116 0z" fill="#ffc9e3"/>
+    <path d="M88 130a40 20 0 0 1 80 0z" fill="#ffdeeb"/>
+    <path d="M108 110a20 13 0 0 1 40 0z" fill="#fff0f6"/>
+    <circle cx="128" cy="90" r="11" fill="#ff6b6b"/>
+  </g>
+</svg>

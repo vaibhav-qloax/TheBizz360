@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-food-primary: #d9480f;
+  --color-food-dark: #b8380a;
+  --color-food-tint: #fff1e8;
+  --color-food-accent: #ff7a1a;
+  --color-food-soft: #ffe8d6;
+  --color-food-bg: #fff5ec;
+  --color-food-border: #f6ddc5;
+
+  --color-work-primary: #2F4BD8;
+  --color-work-dark: #1E2F8F;
+  --color-work-tint: #EEF1FE;
+  --color-work-bg: #F5F7FB;
+  --color-work-border: #E3E7EF;
+  --color-work-text: #0E1525;
+  --color-work-muted: #5B6475;
+
+  --color-ink: #10161a;
+  --color-ink-2: #241a12;
+  --color-ink-muted: #7a6a5c;
+
+  --font-display: 'Unbounded Variable', 'Unbounded', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+}
+
+:root {
+  --font-display: 'Unbounded Variable', 'Unbounded', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background:
+    radial-gradient(1100px 600px at 100% -10%, rgba(255, 122, 26, 0.16), transparent 62%),
+    radial-gradient(900px 560px at -14% 18%, rgba(217, 72, 15, 0.1), transparent 58%),
+    radial-gradient(900px 520px at 90% 74%, rgba(47, 75, 216, 0.08), transparent 62%),
+    linear-gradient(165deg, #fffaf4 0%, #fff5ec 45%, #f7f3ed 100%);
+  color: #10161a;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Hide scrollbar for clean carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth continuous horizontal marquee to the left */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left:hover,
+.marquee-track:hover .animate-marquee-left {
+  animation-play-state: paused !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff5ec;
+}
+::-webkit-scrollbar-thumb {
+  background: #f6ddc5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7a1a;
+}

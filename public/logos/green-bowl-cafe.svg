@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Green Bowl Cafe logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5db36d"/>
+      <stop offset="1" stop-color="#298b3c"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="60" fill="url(#g)"/>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="4"/>
+  <g>
+    <path d="M56 138h144a72 72 0 0 1-144 0z" fill="#ffffff"/>
+    <path d="M128 124c-34-2-52-26-46-56 32 0 52 22 46 56z" fill="#8ce99a"/>
+    <path d="M132 124c34-2 52-26 46-56-32 0-52 22-46 56z" fill="#69db7c"/>
+    <circle cx="128" cy="96" r="14" fill="#ffd43b"/>
+  </g>
+</svg>
