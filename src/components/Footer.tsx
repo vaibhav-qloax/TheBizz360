@@ -1,100 +1,79 @@
 import { Link } from 'react-router-dom';
-import { Utensils, Briefcase, Mail, MapPin, Clock } from 'lucide-react';
+import { Mail, Clock, ExternalLink } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[#10161a] text-white border-t border-[#241a12]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          {/* Brand Info */}
-          <div className="md:col-span-1 space-y-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-start pb-8 border-b border-white/10">
+          {/* 1. Brand */}
+          <div className="space-y-3">
             <Link to="/" className="flex items-center gap-3">
               <img
                 src="/logo.png"
                 alt="TheBizz360"
-                className="h-10 w-10 rounded-xl object-contain"
+                className="h-9 w-9 rounded-xl object-contain"
               />
               <span className="font-display font-bold text-xl text-white">
                 TheBizz<span className="text-[#ff7a1a]">360</span>
               </span>
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              The unified platform connecting commercial complexes, business parks, and campus communities with instant food court ordering and essential work services.
+            <p className="text-sm text-gray-400 font-medium">
+              Food. Work. Everything Connected.
             </p>
-            <div className="flex items-center gap-3 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#ff7a1a]/15 text-[#ff7a1a] border border-[#ff7a1a]/30">
-                <Utensils className="w-3 h-3" /> Food Space
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#2F4BD8]/20 text-[#7ba4ff] border border-[#2F4BD8]/40">
-                <Briefcase className="w-3 h-3" /> Work Space
-              </span>
+            <div className="pt-1">
+              <a
+                href="https://www.thebizz360.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#d9480f] hover:bg-[#b8380a] text-white text-xs font-bold transition-all shadow-xs"
+              >
+                <span>Campus Login</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 
-          {/* Quick Navigation */}
+          {/* 2. Quick Navigation */}
           <div>
-            <h3 className="font-display text-sm font-semibold tracking-wider text-gray-200 uppercase mb-4">
+            <h3 className="font-display text-xs font-bold tracking-wider text-gray-300 uppercase mb-3">
               Navigation
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/" className="text-gray-400 hover:text-white transition-colors">
-                  Home Overview
+                  Home
                 </Link>
               </li>
               <li>
                 <Link to="/blogs" className="text-gray-400 hover:text-white transition-colors">
-                  Complex Insights &amp; Blogs
+                  Blogs
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
-                  Contact &amp; Partnerships
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Platform Pillars */}
+          {/* 3. Verified Contact / Support */}
           <div>
-            <h3 className="font-display text-sm font-semibold tracking-wider text-gray-200 uppercase mb-4">
-              Platform Pillars
+            <h3 className="font-display text-xs font-bold tracking-wider text-gray-300 uppercase mb-3">
+              Support Desk
             </h3>
             <ul className="space-y-2.5 text-sm text-gray-400">
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a1a]"></span>
-                Food Court Stalls &amp; Cafes
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a1a]"></span>
-                Live Queue &amp; Desk Delivery
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2F4BD8]"></span>
-                Digital Print &amp; Xerox Queue
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2F4BD8]"></span>
-                IT &amp; Commercial Directory
-              </li>
-            </ul>
-          </div>
-
-          {/* Complex Hub Contact Details */}
-          <div>
-            <h3 className="font-display text-sm font-semibold tracking-wider text-gray-200 uppercase mb-4">
-              Complex Desk
-            </h3>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#ff7a1a] shrink-0 mt-0.5" />
-                <span>Central Commercial Food Court &amp; Business Liaison Desk</span>
-              </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#ff7a1a] shrink-0" />
-                <span>support@thebizz360.com</span>
+                <a
+                  href="mailto:support@thebizz360.com"
+                  className="hover:text-white transition-colors"
+                >
+                  support@thebizz360.com
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-[#ff7a1a] shrink-0" />
@@ -105,12 +84,21 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
-          <p>
-            &copy; {currentYear} TheBizz360. All rights reserved. A unified commercial &amp; campus complex platform.
-          </p>
-          <div className="flex items-center gap-6">
-            <span className="text-gray-400">Designed with authentic Food &amp; Work design tokens</span>
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+          <p>&copy; {currentYear} TheBizz360. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <Link to="/contact" className="hover:text-white transition-colors">
+              Help &amp; Inquiries
+            </Link>
+            <span>&bull;</span>
+            <a
+              href="https://www.thebizz360.com/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#ff7a1a] hover:underline font-semibold"
+            >
+              Sign In
+            </a>
           </div>
         </div>
       </div>

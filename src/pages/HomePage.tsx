@@ -1,38 +1,16 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  UtensilsCrossed,
-  Printer,
-  Wrench,
-  Code2,
+  Utensils,
   Briefcase,
-  Layers,
   Zap,
-  ShieldCheck,
-  Activity,
   ArrowRight,
-  CheckCircle2,
-  ChevronRight,
-  Store,
-  Clock,
-  Sparkles,
   ExternalLink,
+  Sparkles,
+  Clock,
 } from 'lucide-react';
-import { OFFERINGS } from '../data/offerings';
-import { BENEFITS } from '../data/benefits';
-import { BLOG_POSTS } from '../data/blogs';
 import { SEOHead } from '../components/SEOHead';
-import { PlatformPreview } from '../components/PlatformPreview';
-import { SpaceType } from '../types';
 
 export function HomePage() {
-  const [activeSpaceTab, setActiveSpaceTab] = useState<SpaceType>('all');
-
-  const filteredOfferings = OFFERINGS.filter((item) => {
-    if (activeSpaceTab === 'all') return true;
-    return item.space === activeSpaceTab;
-  });
-
   const DISCOVERY_ITEMS = [
     { name: 'Breakfast', image: '/dishes/breakfast.png' },
     { name: 'Lunch', image: '/dishes/lunch.png' },
@@ -41,191 +19,196 @@ export function HomePage() {
     { name: 'North Indian', image: '/dishes/north-indian.png' },
     { name: 'South Indian', image: '/dishes/south-indian.png' },
     { name: 'Chinese', image: '/dishes/chinese.png' },
-    { name: 'Starters', image: '/dishes/starters.png' },
     { name: 'Pizza', image: '/dishes/pizza.png' },
     { name: 'Burgers', image: '/dishes/burgers.png' },
     { name: 'Sandwiches', image: '/dishes/sandwiches.png' },
-    { name: 'Fast Food', image: '/dishes/fast-food.png' },
     { name: 'Healthy', image: '/dishes/healthy.png' },
     { name: 'Juices & Shakes', image: '/dishes/juices-shakes.png' },
     { name: 'Coffee & Tea', image: '/dishes/coffee-tea.png' },
-    { name: 'Print & Xerox', image: '/services/print-xerox.jpg' },
-    { name: 'IT & Web Services', image: '/services/student-it.jpg' },
+    { name: 'Desserts', image: '/dishes/desserts.png' },
   ];
-
-  const renderOfferingIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'UtensilsCrossed':
-        return <UtensilsCrossed className="w-6 h-6 text-[#d9480f]" />;
-      case 'Clock':
-        return <Clock className="w-6 h-6 text-[#d9480f]" />;
-      case 'Printer':
-        return <Printer className="w-6 h-6 text-[#2F4BD8]" />;
-      case 'Wrench':
-        return <Wrench className="w-6 h-6 text-[#2F4BD8]" />;
-      case 'Code2':
-        return <Code2 className="w-6 h-6 text-[#2F4BD8]" />;
-      case 'Briefcase':
-        return <Briefcase className="w-6 h-6 text-[#2F4BD8]" />;
-      default:
-        return <Store className="w-6 h-6 text-[#d9480f]" />;
-    }
-  };
-
-  const renderBenefitIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Layers':
-        return <Layers className="w-6 h-6 text-[#d9480f]" />;
-      case 'Zap':
-        return <Zap className="w-6 h-6 text-[#ff7a1a]" />;
-      case 'ShieldCheck':
-        return <ShieldCheck className="w-6 h-6 text-[#2F4BD8]" />;
-      case 'Activity':
-        return <Activity className="w-6 h-6 text-[#17803d]" />;
-      default:
-        return <Sparkles className="w-6 h-6 text-[#d9480f]" />;
-    }
-  };
 
   const homeJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'TheBizz360',
     url: 'https://thebizz360.com/',
-    logo: 'https://thebizz360.com/logo.png',
+    logo: 'https://thebizz360.com/logo-clean.png',
     description:
-      'The unified campus & commercial hub connecting business parks and university communities with instant food ordering and essential work services.',
+      'The unified campus & commercial hub connecting business parks and universities with instant food ordering and essential work services.',
   };
 
   return (
     <>
       <SEOHead
-        title="TheBizz360 | Campus & Commercial Hub for Food, Services & Work"
-        description="TheBizz360 connects campus and commercial communities with multi-outlet food ordering, desk delivery, on-demand printing, and verified in-building services."
+        title="TheBizz360 | Food, Work & Campus Life Connected"
+        description="Consolidated multi-stall food court dining and zero-queue commercial print services delivered straight to your office desk."
         canonicalUrl="https://thebizz360.com/"
         jsonLd={homeJsonLd}
       />
 
-      {/* 1. HERO SECTION: Explain TheBizz360 & Prominent Link to www.thebizz360.com */}
-      <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 md:pt-36 md:pb-24 border-b border-[#f6ddc5]/60 bg-[#fff5ec] min-h-[85vh] flex items-center">
-        {/* Softly Faded Food Background (Tinted to match site's warm palette) */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* 1. HERO SECTION: Full-Viewport Above-The-Fold Stage (Darker Warm Orange Bg) */}
+      <section className="relative overflow-hidden min-h-screen flex flex-col justify-center pt-24 pb-12 sm:pt-28 sm:pb-16 bg-linear-to-b from-[#ffeedd] via-[#ffe3cc] to-[#ffeedd] border-b border-[#f3c29f]">
+        {/* Vibrant Cafe Dining Background Image with Warm Dark Orange Directional Scrim */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img
             src="/hero-food-bg.jpg"
-            alt="Campus Dining Background"
-            className="w-full h-full object-cover object-center opacity-30"
+            alt="Campus Dining"
+            className="w-full h-full object-cover object-[70%_center] lg:object-right opacity-80 sm:opacity-85 lg:opacity-90"
           />
-          {/* Subtle gradient wash matching #fff5ec */}
-          <div className="absolute inset-0 bg-linear-to-b from-[#fff5ec]/50 via-transparent to-[#fff5ec]" />
+          {/* Warm Dark Orange left-to-right gradient fade: soft backing behind text on left, completely transparent across center & right */}
+          <div className="absolute inset-0 bg-linear-to-r from-[#ffd8be]/95 via-[#ffd8be]/60 to-transparent" />
+          {/* Warm Dark Orange top and bottom gradient fades */}
+          <div className="absolute inset-x-0 top-0 h-16 bg-linear-to-b from-[#ffeedd]/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-[#ffeedd]/80 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-4 sm:py-6">
-          {/* Direct Text on Background (No box container) */}
-          <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-2">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+            {/* Left: Punchy Headline & Immediate CTAs */}
+            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-[#f3c29f] shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#d9480f] animate-pulse" />
+                <span className="text-xs font-extrabold text-[#10161a] uppercase tracking-wider">
+                  Campus &amp; Complex Platform
+                </span>
+              </div>
 
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[62px] font-black text-[#10161a] tracking-tight leading-[1.08]">
+                Food. Work.<br />
+                <span className="whitespace-nowrap">
+                  <span className="text-[#d9480f]">Everything</span>{' '}
+                  <span className="text-[#2F4BD8]">Connected.</span>
+                </span>
+              </h1>
 
-            {/* Primary H1 */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-black text-[#10161a] tracking-tight leading-[1.18] sm:leading-[1.14]">
-              Connecting Complex Communities With{' '}
-              <span className="text-[#d9480f]">
-                Seamless Dining
-              </span>{' '}
-              &amp;{' '}
-              <span className="text-[#2F4BD8]">
-                Work Services
-              </span>
-            </h1>
+              <p className="text-base sm:text-lg md:text-xl text-[#3d2e23] font-semibold max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Consolidated food court dining and zero-queue commercial services delivered straight to your office desk.
+              </p>
 
-            {/* Clear Description */}
-            <p className="text-sm sm:text-base md:text-lg text-[#3d332a] max-w-2xl mx-auto leading-relaxed font-medium px-2 sm:px-0">
-              TheBizz360 unifies campus and commercial complex life into one clean platform. Combine meals from multiple food stalls into a single desk delivery to your office, skip queues with digital print uploads, and connect with verified in-house businesses and IT services.
-            </p>
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
+                <a
+                  href="https://www.thebizz360.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#d9480f] text-white text-sm sm:text-base font-bold hover:bg-[#b8380a] transition-all shadow-md hover:scale-105"
+                >
+                  <span>Explore Platform</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
 
-            {/* Minimal, Cohesive Hero CTAs */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-              <a
-                href="https://www.thebizz360.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#d9480f] text-white text-sm font-semibold hover:bg-[#b8380a] transition-all shadow-xs cursor-pointer"
-              >
-                <span>Visit Platform</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-90" />
-              </a>
+                <a
+                  href="#showcase"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white border border-[#f3c29f] text-[#10161a] text-sm sm:text-base font-bold hover:bg-[#fff5ec] hover:border-[#d9480f] transition-all shadow-xs"
+                >
+                  <span>How It Works</span>
+                  <ArrowRight className="w-4 h-4 text-[#d9480f]" />
+                </a>
+              </div>
+            </div>
 
-              <a
-                href="#offerings"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white border border-[#f6ddc5] text-[#10161a] text-sm font-semibold hover:bg-[#fff5ec] hover:border-[#d9480f] transition-all shadow-xs cursor-pointer"
-              >
-                <span>What We Offer</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#d9480f]" />
-              </a>
+            {/* Right: 2D Cartoon Mascot Sticker (Clean, No Box) */}
+            <div className="lg:col-span-5 relative flex items-center justify-center">
+              {/* Subtle Ambient Warm Glow */}
+              <div className="absolute w-72 h-72 sm:w-88 sm:h-88 rounded-full bg-linear-to-tr from-[#ff7a1a]/25 via-[#2F4BD8]/12 to-transparent blur-3xl pointer-events-none" />
 
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-white/70 hover:bg-white border border-[#f6ddc5] text-[#7a6a5c] hover:text-[#10161a] text-sm font-semibold transition-all shadow-2xs"
-              >
-                <span>Get in Touch</span>
-                <ChevronRight className="w-3.5 h-3.5" />
-              </Link>
+              {/* Floating Speed Sticker (Badge) */}
+              <div className="absolute -top-3 right-2 sm:right-6 z-20 w-22 h-22 sm:w-28 sm:h-28 hover:scale-110 transition-transform duration-300">
+                <img
+                  src="/stickers/speed-badge.png"
+                  alt="Superfast Badge Sticker"
+                  className="w-full h-full object-contain drop-shadow-xl"
+                />
+              </div>
+
+              {/* Main Hero Mascot Sticker without Box */}
+              <div className="relative z-10 w-72 h-72 sm:w-88 sm:h-88 md:w-[400px] md:h-[400px] transition-transform duration-300 hover:scale-105">
+                <img
+                  src="/stickers/hero-mascot.png"
+                  alt="TheBizz360 Campus Hero Mascot"
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom 3 Features Bar: Positioned lower down, text-only, no cutting border line */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-4 sm:pb-6 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-14 md:gap-18 text-[#10161a]">
+            <div className="flex items-center gap-2.5 text-base sm:text-lg font-black tracking-tight">
+              <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[#d9480f] shrink-0" />
+              <span>10–15m Desk Drop</span>
+            </div>
+            <span className="hidden sm:inline text-[#d9480f]/40 text-xl font-bold">•</span>
+            <div className="flex items-center gap-2.5 text-base sm:text-lg font-black tracking-tight">
+              <Utensils className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff7a1a] shrink-0" />
+              <span>1 Combined Cart</span>
+            </div>
+            <span className="hidden sm:inline text-[#2F4BD8]/40 text-xl font-bold">•</span>
+            <div className="flex items-center gap-2.5 text-base sm:text-lg font-black tracking-tight">
+              <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-[#2F4BD8] shrink-0" />
+              <span>Live Token Status</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. CAMPUS DISCOVERY: Dishes & Services Left-Scrolling Rail */}
-      <section className="py-8 sm:py-10 bg-white border-y border-[#f6ddc5] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 sm:mb-6 text-center">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#d9480f] block mb-1">
-            Verified On-Premises Partners &bull; Food &amp; Work
+      {/* 2. CAMPUS DISCOVERY: Authentic Dishes Marquee (Warm Dark Orange Theme, No White Fade) */}
+      <section className="py-7 sm:py-9 bg-linear-to-b from-[#ffeedd] via-[#ffe8d6] to-[#fff5ec] border-b border-[#f3c29f] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 sm:mb-5 text-center">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#d9480f] block mb-0.5">
+            Verified Food Court Stalls
           </span>
-          <h2 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-[#10161a]">
-            Serving Food Courts, Cafeterias &amp; Commercial Centers
+          <h2 className="font-display text-base sm:text-xl font-bold text-[#10161a]">
+            Popular Dishes &amp; Daily Specials
           </h2>
         </div>
 
-        {/* Continuous Left-Scrolling Dish & Service Line */}
-        <div className="marquee-track relative w-full overflow-hidden py-8 sm:py-10 bg-linear-to-r from-[#fff5ec]/80 via-white to-[#fff5ec]/80 border-t border-[#f6ddc5]/50">
-          {/* Subtle gradient edges for smooth fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-24 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-24 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
+        {/* Continuous Left-Scrolling Marquee Rail */}
+        <div className="marquee-track relative w-full overflow-hidden py-8 sm:py-10 bg-linear-to-r from-[#ffdcc2]/90 via-[#ffe8d6] to-[#ffdcc2]/90 border-t border-b border-[#f3c29f]">
+          {/* Warm Dark Orange Side Curtains (No White Washout) */}
+          <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-28 bg-linear-to-r from-[#ffdcc2] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-28 bg-linear-to-l from-[#ffdcc2] to-transparent z-10 pointer-events-none" />
 
           <div className="animate-marquee-left flex items-center gap-6 sm:gap-10">
-            {/* First set of items */}
+            {/* First set */}
             {DISCOVERY_ITEMS.map((item, idx) => (
               <div
                 key={`item-1-${idx}`}
                 className="shrink-0 flex flex-col items-center gap-2 group cursor-pointer relative z-10 hover:z-30"
               >
-                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full p-1 bg-white border-2 border-[#f6ddc5] shadow-xs group-hover:scale-150 group-hover:-translate-y-2 group-hover:border-[#d9480f] group-hover:shadow-2xl group-hover:ring-4 group-hover:ring-[#d9480f]/20 transition-all duration-300 ease-out origin-center overflow-hidden flex items-center justify-center">
+                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full p-1 bg-white border-2 border-[#f3c29f] shadow-xs group-hover:scale-130 group-hover:-translate-y-1 group-hover:border-[#d9480f] group-hover:shadow-xl group-hover:ring-4 group-hover:ring-[#d9480f]/20 transition-all duration-300 ease-out origin-center overflow-hidden flex items-center justify-center">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover rounded-full transition-transform duration-300 ease-out group-hover:scale-120"
+                    className="w-full h-full object-cover rounded-full transition-transform duration-300 ease-out group-hover:scale-115"
                     loading="lazy"
                   />
                 </div>
-                <span className="text-[11px] sm:text-xs font-bold text-[#10161a] group-hover:text-[#d9480f] group-hover:translate-y-1 transition-all duration-300 whitespace-nowrap">
+                <span className="text-[11px] sm:text-xs font-bold text-[#10161a] group-hover:text-[#d9480f] group-hover:translate-y-0.5 transition-all duration-300 whitespace-nowrap">
                   {item.name}
                 </span>
               </div>
             ))}
 
-            {/* Duplicate set for seamless continuous infinite loop */}
+            {/* Duplicate set for infinite loop */}
             {DISCOVERY_ITEMS.map((item, idx) => (
               <div
                 key={`item-2-${idx}`}
                 className="shrink-0 flex flex-col items-center gap-2 group cursor-pointer relative z-10 hover:z-30"
               >
-                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full p-1 bg-white border-2 border-[#f6ddc5] shadow-xs group-hover:scale-150 group-hover:-translate-y-2 group-hover:border-[#d9480f] group-hover:shadow-2xl group-hover:ring-4 group-hover:ring-[#d9480f]/20 transition-all duration-300 ease-out origin-center overflow-hidden flex items-center justify-center">
+                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full p-1 bg-white border-2 border-[#f3c29f] shadow-xs group-hover:scale-130 group-hover:-translate-y-1 group-hover:border-[#d9480f] group-hover:shadow-xl group-hover:ring-4 group-hover:ring-[#d9480f]/20 transition-all duration-300 ease-out origin-center overflow-hidden flex items-center justify-center">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover rounded-full transition-transform duration-300 ease-out group-hover:scale-120"
+                    className="w-full h-full object-cover rounded-full transition-transform duration-300 ease-out group-hover:scale-115"
                     loading="lazy"
                   />
                 </div>
-                <span className="text-[11px] sm:text-xs font-bold text-[#10161a] group-hover:text-[#d9480f] group-hover:translate-y-1 transition-all duration-300 whitespace-nowrap">
+                <span className="text-[11px] sm:text-xs font-bold text-[#10161a] group-hover:text-[#d9480f] group-hover:translate-y-0.5 transition-all duration-300 whitespace-nowrap">
                   {item.name}
                 </span>
               </div>
@@ -234,294 +217,292 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 3. INTERACTIVE PLATFORM PREVIEW */}
-      <section className="py-12 sm:py-16 bg-[#fffaf4] border-b border-[#f6ddc5]/70">
+      {/* 3. SHOWCASE: Two Distinct Zepto-Style Promotional Cards */}
+      <section id="showcase" className="py-14 sm:py-20 bg-transparent scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
             <span className="text-xs font-bold uppercase tracking-wider text-[#d9480f] block mb-1">
-              Live Platform Experience
+              Two Dedicated Spaces
             </span>
-            <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-[#10161a] tracking-tight">
-              See How It Works in Practice
-            </h2>
-            <p className="mt-2 text-xs sm:text-sm text-[#7a6a5c]">
-              Toggle between Food Space and Work Space to preview combined orders and streamlined commercial services.
-            </p>
-          </div>
-
-          <PlatformPreview />
-        </div>
-      </section>
-
-      {/* 3. SHOW WHAT WE OFFER: Highlight Food and Work Sections */}
-      <section id="offerings" className="py-14 sm:py-20 bg-transparent scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#f6ddc5] text-xs font-bold text-[#d9480f] mb-3">
-              Platform Modules
-            </div>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#10161a] tracking-tight">
-              What We Offer
+              Food &bull; Work &bull; Done Right.
             </h2>
-            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-[#7a6a5c]">
-              Carefully designed capabilities built for the everyday rhythms of tenants, employees, and on-premises commercial vendors.
-            </p>
-
-            {/* Filter Toggle: Mobile friendly with wrap/scroll protection */}
-            <div className="mt-6 sm:mt-8 inline-flex flex-wrap sm:flex-nowrap justify-center items-center p-1 sm:p-1.5 bg-white border border-[#f6ddc5] rounded-2xl shadow-xs max-w-full gap-1">
-              <button
-                type="button"
-                onClick={() => setActiveSpaceTab('all')}
-                className={`px-3.5 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                  activeSpaceTab === 'all'
-                    ? 'bg-[#10161a] text-white shadow-xs'
-                    : 'text-[#7a6a5c] hover:text-[#10161a]'
-                }`}
-              >
-                All ({OFFERINGS.length})
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveSpaceTab('food')}
-                className={`px-3.5 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                  activeSpaceTab === 'food'
-                    ? 'bg-[#d9480f] text-white shadow-xs'
-                    : 'text-[#7a6a5c] hover:text-[#d9480f]'
-                }`}
-              >
-                <UtensilsCrossed className="w-3.5 h-3.5" />
-                Food Space
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveSpaceTab('work')}
-                className={`px-3.5 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                  activeSpaceTab === 'work'
-                    ? 'bg-[#2F4BD8] text-white shadow-xs'
-                    : 'text-[#7a6a5c] hover:text-[#2F4BD8]'
-                }`}
-              >
-                <Briefcase className="w-3.5 h-3.5" />
-                Work Space
-              </button>
-            </div>
           </div>
 
-          {/* Offerings Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            {filteredOfferings.map((offering) => {
-              const isFood = offering.space === 'food';
-              return (
-                <div
-                  key={offering.id}
-                  className="bg-white rounded-3xl p-5 sm:p-6 border transition-all duration-200 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between"
-                  style={{
-                    borderColor: isFood ? '#f6ddc5' : '#E3E7EF',
-                  }}
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div
-                        className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                        style={{
-                          backgroundColor: isFood ? '#ffe8d6' : '#EEF1FE',
-                        }}
-                      >
-                        {renderOfferingIcon(offering.icon)}
-                      </div>
-                      <span
-                        className="text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider"
-                        style={{
-                          backgroundColor: isFood ? '#fff1e8' : '#F5F7FB',
-                          color: offering.accentColor,
-                          border: `1px solid ${isFood ? '#f6ddc5' : '#E3E7EF'}`,
-                        }}
-                      >
-                        {offering.tag}
-                      </span>
-                    </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+            {/* Card 1: Food Space Showcase */}
+            <div className="relative rounded-3xl p-6 sm:p-8 bg-linear-to-br from-[#fffaf4] via-[#fff5ec] to-[#ffe8d6]/50 border-2 border-[#f6ddc5] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+              <div>
+                {/* Header Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#ffe8d6] text-[#d9480f]">
+                    <Utensils className="w-3.5 h-3.5" /> Food Space
+                  </span>
+                  <span className="text-[11px] font-bold text-[#d9480f] bg-white px-3 py-1 rounded-full border border-[#f6ddc5]">
+                    Food &amp; Dining
+                  </span>
+                </div>
 
-                    <div className="text-xs font-bold text-[#7a6a5c] uppercase tracking-wider mb-1">
-                      {offering.category}
-                    </div>
-                    <h3 className="font-display text-base sm:text-lg font-bold text-[#10161a] leading-snug mb-2">
-                      {offering.title}
+                {/* Headline & Sticker Graphic */}
+                <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center mb-5">
+                  <div className="sm:col-span-7">
+                    <h3 className="font-display text-2xl sm:text-3xl font-black text-[#10161a] leading-tight">
+                      One Delivery.<br />Every Food Stall.
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#7a6a5c] leading-relaxed mb-4">
-                      {offering.description}
-                    </p>
                   </div>
-
-                  <div className="pt-4 border-t border-gray-100 space-y-2">
-                    {offering.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-[#10161a]">
-                        <CheckCircle2
-                          className="w-3.5 h-3.5 shrink-0 mt-0.5"
-                          style={{ color: offering.accentColor }}
-                        />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
+                  <div className="sm:col-span-5 flex justify-center">
+                    <img
+                      src="/stickers/food-box.png"
+                      alt="Food Space Sticker"
+                      className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-md hover:scale-108 transition-transform duration-300"
+                    />
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* 4. BUILD TRUST: Why Choose TheBizz360 */}
-      <section className="py-14 sm:py-20 bg-white border-y border-[#f6ddc5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ffe8d6] text-xs font-bold text-[#d9480f] mb-3">
-              Why Campus &amp; Complex Communities Choose Us
+                {/* Highlighted Service Keyline with Stylish Arrows */}
+                <div className="pt-2 pb-2 flex justify-center">
+                  <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-4 py-2.5 rounded-2xl bg-linear-to-r from-[#ffe8d6] via-white to-[#ffe8d6] border-2 border-[#f6ddc5] text-[#d9480f] text-xs sm:text-sm font-extrabold shadow-xs">
+                    <span>Food Court Pre-Ordering</span>
+                    <ArrowRight className="w-3.5 h-3.5 shrink-0 text-[#d9480f]" />
+                    <span>Desk Delivery</span>
+                    <ArrowRight className="w-3.5 h-3.5 shrink-0 text-[#d9480f]" />
+                    <span>Live Token Status</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Centered Action Button */}
+              <div className="pt-5 sm:pt-6 flex items-center justify-center">
+                <a
+                  href="https://www.thebizz360.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#d9480f] text-white text-sm sm:text-base font-bold shadow-md hover:bg-[#b8380a] transition-all hover:scale-105"
+                >
+                  <span>Explore Food</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
             </div>
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#10161a] tracking-tight">
-              Why Choose TheBizz360
-            </h2>
-            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-[#7a6a5c]">
-              Built ground-up around the real logistical realities of high-density commercial complexes, office towers, and campus environments.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {BENEFITS.map((benefit) => (
-              <div
-                key={benefit.id}
-                className="bg-[#fff5ec]/50 rounded-3xl p-5 sm:p-6 border border-[#f6ddc5] shadow-2xs hover:shadow-md transition-all duration-200"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-[#f6ddc5] flex items-center justify-center mb-4 shadow-2xs shrink-0">
-                  {renderBenefitIcon(benefit.icon)}
+            {/* Card 2: Work Space Showcase */}
+            <div className="relative rounded-3xl p-6 sm:p-8 bg-linear-to-br from-[#F5F7FB] via-[#EEF1FE]/60 to-white border-2 border-[#E3E7EF] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+              <div>
+                {/* Header Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#EEF1FE] text-[#2F4BD8]">
+                    <Briefcase className="w-3.5 h-3.5" /> Work Space
+                  </span>
+                  <span className="text-[11px] font-bold text-[#2F4BD8] bg-white px-3 py-1 rounded-full border border-[#E3E7EF]">
+                    Commercial Services
+                  </span>
                 </div>
 
-                {benefit.stat && (
-                  <div className="mb-2">
-                    <span className="font-display text-xl sm:text-2xl font-black text-[#10161a]">
-                      {benefit.stat}
-                    </span>
-                    <span className="block text-xs font-bold text-[#d9480f]">
-                      {benefit.statLabel}
-                    </span>
+                {/* Headline & Sticker Graphic */}
+                <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center mb-5">
+                  <div className="sm:col-span-7">
+                    <h3 className="font-display text-2xl sm:text-3xl font-black text-[#0E1525] leading-tight">
+                      Zero Lines.<br />Direct Print &amp; Work.
+                    </h3>
                   </div>
-                )}
+                  <div className="sm:col-span-5 flex justify-center">
+                    <img
+                      src="/stickers/work-station.png"
+                      alt="Work Space Sticker"
+                      className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-md hover:scale-108 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
 
-                <h3 className="font-display text-sm sm:text-base font-bold text-[#10161a] mb-1.5 sm:mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#7a6a5c] leading-relaxed">
-                  {benefit.description}
-                </p>
+                {/* Highlighted Service Keyline with Stylish Arrows */}
+                <div className="pt-2 pb-2 flex justify-center">
+                  <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-4 py-2.5 rounded-2xl bg-linear-to-r from-[#EEF1FE] via-white to-[#EEF1FE] border-2 border-[#d6defa] text-[#2F4BD8] text-xs sm:text-sm font-extrabold shadow-xs">
+                    <span>Print &amp; Xerox Queue</span>
+                    <ArrowRight className="w-3.5 h-3.5 shrink-0 text-[#2F4BD8]" />
+                    <span>Courier Dispatch</span>
+                    <ArrowRight className="w-3.5 h-3.5 shrink-0 text-[#2F4BD8]" />
+                    <span>IT &amp; Legal Desk</span>
+                  </div>
+                </div>
               </div>
-            ))}
+
+              {/* Bottom Centered Action Button */}
+              <div className="pt-5 sm:pt-6 flex items-center justify-center">
+                <a
+                  href="https://www.thebizz360.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#2F4BD8] text-white text-sm sm:text-base font-bold shadow-md hover:bg-[#1E2F8F] transition-all hover:scale-105"
+                >
+                  <span>Explore Work</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 5. SHARE BLOGS: Organic Search Visibility */}
-      <section className="py-14 sm:py-18 bg-transparent">
+      {/* 4. CAMPUS PINBOARD: Sticky Paper UI (Orange Post-It Notes with Bold Lines Only) */}
+      <section className="py-14 sm:py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-12 gap-3">
             <div>
-              <div className="text-xs font-bold text-[#d9480f] uppercase tracking-wider mb-1.5 sm:mb-2">
-                Complex Publications &bull; Tech Blog
-              </div>
-              <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#10161a]">
-                Latest Logistics &amp; Product Updates
+              <span className="text-xs font-bold uppercase tracking-wider text-[#d9480f] block mb-1">
+                📌 Campus Notice Board
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#10161a] tracking-tight">
+                Sticky Notes &amp; Quick Tips
               </h2>
+              <p className="mt-1 text-xs sm:text-sm text-[#7a6a5c]">
+                Bite-sized hacks and practical reminders for dining and workplace productivity.
+              </p>
             </div>
             <Link
               to="/blogs"
-              className="inline-flex items-center gap-1.5 text-sm font-bold text-[#d9480f] hover:text-[#b8380a]"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#d9480f] hover:underline"
             >
-              Browse all publications <ArrowRight className="w-4 h-4" />
+              All sticky notes <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-            {BLOG_POSTS.slice(0, 3).map((post) => (
-              <Link
-                key={post.slug}
-                to={`/blogs/${post.slug}`}
-                className="group bg-white rounded-3xl p-5 border border-[#f6ddc5] shadow-xs hover:shadow-lg hover:border-[#ff7a1a]/60 transition-all duration-200 flex flex-col justify-between overflow-hidden"
-              >
-                <div>
-                  {/* Visual Cover Image */}
-                  <div className="w-full h-44 rounded-2xl overflow-hidden mb-4 bg-[#fff5ec] relative border border-[#f6ddc5]/60">
-                    <img
-                      src={post.coverImage}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-3 left-3">
-                      <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/95 backdrop-blur-xs text-[#d9480f] shadow-2xs border border-[#f6ddc5]/80">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
+          {/* Sticky Notes Pinboard Grid: Bold Lines Only */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 pt-4">
+            {/* Note 1: Vibrant Orange Sticky */}
+            <div
+              className="relative p-6 sm:p-7 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-0 flex flex-col justify-between text-white -rotate-1 cursor-default group min-h-[220px]"
+              style={{
+                background: 'linear-gradient(135deg, #ff7a1a 0%, #ea580c 100%)',
+              }}
+            >
+              {/* Frosted Tape at Top */}
+              <div className="w-12 h-3.5 bg-white/40 backdrop-blur-xs rounded-xs mx-auto -mt-8 mb-4 border border-white/30 rotate-1 shadow-2xs" />
+              <div>
+                <span className="text-[11px] font-extrabold text-white/80 uppercase tracking-widest block mb-3">
+                  #DiningLogistics
+                </span>
+                <h3 className="font-display text-xl sm:text-2xl font-black text-white leading-snug uppercase tracking-tight space-y-1">
+                  <span className="block">Lunch Rush?</span>
+                  <span className="block text-white/95">Pre-Order 15m Ahead.</span>
+                  <span className="block text-yellow-200">Zero Queue Desk Drop.</span>
+                </h3>
+              </div>
+              <div className="pt-3 border-t border-white/25 text-[11px] font-black uppercase tracking-wider text-white/90">
+                ⚡ 10-15m Express
+              </div>
+            </div>
 
-                  <div className="flex items-center gap-2 text-xs text-[#7a6a5c] mb-2 font-medium">
-                    <Clock className="w-3.5 h-3.5 text-[#d9480f]" />
-                    <span>{post.readTime}</span>
-                    <span className="text-gray-300">&bull;</span>
-                    <span>{post.publishedAt}</span>
-                  </div>
+            {/* Note 2: Warm Amber-Orange Sticky */}
+            <div
+              className="relative p-6 sm:p-7 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-0 flex flex-col justify-between text-white rotate-2 cursor-default group min-h-[220px]"
+              style={{
+                background: 'linear-gradient(135deg, #ff8c38 0%, #d9480f 100%)',
+              }}
+            >
+              {/* Frosted Tape at Top */}
+              <div className="w-12 h-3.5 bg-white/40 backdrop-blur-xs rounded-xs mx-auto -mt-8 mb-4 border border-white/30 -rotate-2 shadow-2xs" />
+              <div>
+                <span className="text-[11px] font-extrabold text-white/80 uppercase tracking-widest block mb-3">
+                  #WorkplaceHacks
+                </span>
+                <h3 className="font-display text-xl sm:text-2xl font-black text-white leading-snug uppercase tracking-tight space-y-1">
+                  <span className="block">Zero Flash Drives.</span>
+                  <span className="block text-white/95">Direct Cloud Queue.</span>
+                  <span className="block text-yellow-200">Print In 4 Mins.</span>
+                </h3>
+              </div>
+              <div className="pt-3 border-t border-white/25 text-[11px] font-black uppercase tracking-wider text-white/90">
+                📄 Color &amp; Spiral Binding
+              </div>
+            </div>
 
-                  <h3 className="font-display text-base sm:text-lg font-bold text-[#10161a] group-hover:text-[#d9480f] transition-colors leading-snug mb-2.5 line-clamp-2">
-                    {post.title}
-                  </h3>
+            {/* Note 3: Warm Coral-Orange Sticky */}
+            <div
+              className="relative p-6 sm:p-7 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-0 flex flex-col justify-between text-white -rotate-2 cursor-default group min-h-[220px]"
+              style={{
+                background: 'linear-gradient(135deg, #ff6b35 0%, #c2410c 100%)',
+              }}
+            >
+              {/* Frosted Tape at Top */}
+              <div className="w-12 h-3.5 bg-white/40 backdrop-blur-xs rounded-xs mx-auto -mt-8 mb-4 border border-white/30 rotate-2 shadow-2xs" />
+              <div>
+                <span className="text-[11px] font-extrabold text-white/80 uppercase tracking-widest block mb-3">
+                  #CampusDining
+                </span>
+                <h3 className="font-display text-xl sm:text-2xl font-black text-white leading-snug uppercase tracking-tight space-y-1">
+                  <span className="block">1 Single Cart.</span>
+                  <span className="block text-white/95">4 Food Stalls.</span>
+                  <span className="block text-yellow-200">One Single Delivery.</span>
+                </h3>
+              </div>
+              <div className="pt-3 border-t border-white/25 text-[11px] font-black uppercase tracking-wider text-white/90">
+                🍱 Combined Drop
+              </div>
+            </div>
 
-                  <p className="text-xs sm:text-sm text-[#7a6a5c] line-clamp-2 leading-relaxed mb-4">
-                    {post.excerpt}
-                  </p>
-                </div>
-
-                <div className="pt-3.5 border-t border-gray-100 flex items-center justify-between text-xs">
-                  <span className="text-[#7a6a5c] font-medium">{post.author.name}</span>
-                  <span className="text-[#d9480f] font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                    Read article <ChevronRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
-              </Link>
-            ))}
+            {/* Note 4: Golden Honey-Orange Sticky */}
+            <div
+              className="relative p-6 sm:p-7 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-0 flex flex-col justify-between text-white rotate-1 cursor-default group min-h-[220px]"
+              style={{
+                background: 'linear-gradient(135deg, #f97316 0%, #b45309 100%)',
+              }}
+            >
+              {/* Frosted Tape at Top */}
+              <div className="w-12 h-3.5 bg-white/40 backdrop-blur-xs rounded-xs mx-auto -mt-8 mb-4 border border-white/30 -rotate-1 shadow-2xs" />
+              <div>
+                <span className="text-[11px] font-extrabold text-white/80 uppercase tracking-widest block mb-3">
+                  #InBuildingPro
+                </span>
+                <h3 className="font-display text-xl sm:text-2xl font-black text-white leading-snug uppercase tracking-tight space-y-1">
+                  <span className="block">In-Building Pros.</span>
+                  <span className="block text-white/95">Verified CA &amp; IT Desk.</span>
+                  <span className="block text-yellow-200">Same-Floor Access.</span>
+                </h3>
+              </div>
+              <div className="pt-3 border-t border-white/25 text-[11px] font-black uppercase tracking-wider text-white/90">
+                🏢 Wing &amp; Floor Directory
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 6. GENERATE ENQUIRIES: Call-to-Action Section */}
-      <section className="py-14 sm:py-20">
+      {/* 5. FINAL PROMOTIONAL CTA BANNER: Zepto-Style High Energy */}
+      <section className="py-14 sm:py-20 bg-[#10161a] text-white border-t border-[#241a12]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-linear-to-r from-[#992804] via-[#b8380a] to-[#d9480f] text-white p-6 sm:p-12 md:p-16 overflow-hidden shadow-xl border border-[#ff7a1a]/50">
-            <div className="relative z-10 max-w-3xl mx-auto text-center space-y-4 sm:space-y-6">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 text-xs font-bold text-yellow-300 border border-white/20">
-                <Sparkles className="w-3.5 h-3.5" /> Ready to Partner?
+          <div className="relative rounded-3xl p-8 sm:p-12 md:p-16 bg-linear-to-r from-[#1c140e] via-[#241a12] to-[#1c140e] border border-[#3d2b1f] overflow-hidden text-center">
+            {/* Ambient Radial Accent */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#d9480f]/20 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#ff7a1a]/20 text-[#ff7a1a] border border-[#ff7a1a]/30">
+                <Sparkles className="w-3.5 h-3.5" /> Your World, Made Simpler
               </span>
 
-              <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
-                Bring TheBizz360 to Your Complex or Food Outlets
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+                Ready to Upgrade Your Workday?
               </h2>
 
-              <p className="text-sm sm:text-base text-white/90 max-w-xl mx-auto leading-relaxed">
-                Whether you run an on-premises food stall, provide commercial printing services, or manage commercial building facilities, get in touch with our team today.
+              <p className="text-sm sm:text-base text-gray-300 font-medium">
+                Skip the queues. Order multi-stall lunches and digital print services directly to your building desk.
               </p>
 
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <div className="pt-4 flex flex-wrap items-center justify-center gap-3.5">
                 <a
-                  href="https://www.thebizz360.com/"
+                  href="https://www.thebizz360.com/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-full bg-white text-[#d9480f] font-bold text-sm sm:text-base shadow-lg hover:bg-yellow-50 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#d9480f] text-white text-sm sm:text-base font-bold shadow-lg hover:bg-[#ff7a1a] transition-all hover:scale-105"
                 >
-                  <span>Visit Platform</span>
+                  <span>Launch TheBizz360</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
 
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-full bg-black/25 border border-white/30 text-white font-semibold text-sm sm:text-base hover:bg-black/35 transition-all"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm sm:text-base font-semibold transition-all"
                 >
-                  Contact Operations Team
+                  <span>Contact Operations</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

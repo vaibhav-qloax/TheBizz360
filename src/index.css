@@ -21,8 +21,8 @@
   --color-ink-2: #241a12;
   --color-ink-muted: #7a6a5c;
 
-  --font-display: 'Unbounded Variable', 'Unbounded', system-ui, sans-serif;
-  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -32,8 +32,8 @@
 }
 
 :root {
-  --font-display: 'Unbounded Variable', 'Unbounded', system-ui, sans-serif;
-  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 body {

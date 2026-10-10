@@ -111,15 +111,15 @@ export function ContactPage() {
       <div className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ffe8d6] text-[#d9480f] text-xs font-semibold mb-3">
-              Complex Liaison Desk
-            </div>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#10161a] tracking-tight">
-              Get in Touch with TheBizz360
+          <div className="max-w-2xl mb-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#d9480f] block mb-1">
+              Complex Operations Desk
+            </span>
+            <h1 className="font-display text-4xl sm:text-5xl font-black text-[#10161a] tracking-tight">
+              Let&apos;s Connect.
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#7a6a5c] leading-relaxed">
-              Have questions regarding vendor onboarding for your food stall, service listings for your commercial business, or operations within your complex? Send us a note below.
+            <p className="mt-2 text-sm sm:text-base text-[#7a6a5c]">
+              Questions on stall onboarding, commercial listings, or campus setups? Send us a message.
             </p>
           </div>
 
