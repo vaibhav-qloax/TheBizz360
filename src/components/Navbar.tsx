@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ExternalLink } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,31 +80,10 @@ export function Navbar() {
                 );
               })}
             </div>
-
-            {/* One Prominent CTA */}
-            <a
-              href="https://www.thebizz360.com/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#d9480f] text-white text-xs sm:text-sm font-bold shadow-xs hover:bg-[#b8380a] transition-all hover:scale-102"
-            >
-              <span>Visit Platform</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
           </nav>
 
-          {/* Mobile Actions: Platform Link + Hamburger */}
-          <div className="flex md:hidden items-center gap-2">
-            <a
-              href="https://www.thebizz360.com/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-[#f6ddc5] bg-white text-[11px] font-bold text-[#d9480f]"
-            >
-              <span>Platform</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden items-center">
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
@@ -139,19 +118,6 @@ export function Navbar() {
                 </Link>
               );
             })}
-
-            <div className="pt-3 mt-2 border-t border-gray-100">
-              <a
-                href="https://www.thebizz360.com/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-[#d9480f] text-white text-sm font-bold shadow-xs hover:bg-[#b8380a]"
-              >
-                <span>Visit Platform</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
           </div>
         </div>
       )}
